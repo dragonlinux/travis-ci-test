@@ -8,7 +8,7 @@ before_install:
 - bash ./before_install.sh
 - sudo pip install mkdocs-bootswatch
 install:
-- bash ./portal.build.sh
+- bash ./portal.build.sh -Dgpg.skip=true
 script:
 - test $TRAVIS_PULL_REQUEST == "false" && echo "travis-ci don't support qiniu, so deploy manually" || exit 0
 - bash ./before_upload.sh
